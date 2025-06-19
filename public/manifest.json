@@ -1,0 +1,92 @@
+{
+  "name": "SB-Nettoyage Professionnel",
+  "short_name": "SB-Nettoyage",
+  "description": "Services de nettoyage professionnel avec réservation en ligne et assistant IA",
+  "theme_color": "#006400",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "shortcuts": [
+    {
+      "name": "Réserver un service",
+      "short_name": "Réserver",
+      "description": "Réservez rapidement un service de nettoyage",
+      "url": "/reservation",
+      "icons": [{ "src": "/icons/reservation.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Obtenir un devis",
+      "short_name": "Devis",
+      "description": "Demandez un devis gratuit instantané",
+      "url": "/devis",
+      "icons": [{ "src": "/icons/devis.png", "sizes": "96x96" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/accueil.png",
+      "type": "image/png",
+      "sizes": "1280x720",
+      "label": "Page d'accueil avec assistant IA"
+    },
+    {
+      "src": "/screenshots/services.png",
+      "type": "image/png",
+      "sizes": "1280x720",
+      "label": "Nos services de nettoyage"
+    }
+  ]
+}

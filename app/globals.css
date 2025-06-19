@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables CSS pour la charte graphique SB-Nettoyage */
+:root {
+  /* Couleurs principales */
+  --sb-green: #006400;
+  --sb-green-hover: #004d00;
+  --sb-green-light: #00850018;
+  
+  --sb-orange: #FFA500;
+  --sb-orange-light: #FFB84D;
+  --sb-orange-hover: #FF9500;
+  
+  --sb-white: #FFFFFF;
+  --sb-gray-light: #D3D3D3;
+  --sb-gray-border: #BDBDBD;
+  --sb-gray-dark: #666666;
+  
+  /* Espacements */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+  
+  /* Ombres */
+  --shadow-sm: 0 2px 4px rgba(0, 100, 0, 0.05);
+  --shadow-md: 0 4px 20px rgba(0, 100, 0, 0.1);
+  --shadow-lg: 0 8px 30px rgba(0, 100, 0, 0.15);
+  --shadow-orange: 0 4px 20px rgba(255, 165, 0, 0.2);
+}
+
+/* Styles de base */
+@layer base {
+  * {
+    @apply border-sb-gray-border;
+  }
+  
+  body {
+    @apply bg-white text-gray-900;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-sb-green;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  p {
+    @apply text-base leading-relaxed;
+  }
+  
+  a {
+    @apply transition-colors duration-300;
+  }
+  
+  /* Focus styles accessibilité */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-sb-green;
+  }
+}
+
+/* Composants réutilisables */
+@layer components {
+  /* Boutons principaux */
+  .btn-primary {
+    @apply bg-sb-green text-white px-6 py-3 rounded-lg font-semibold 
+           transition-all duration-300 transform hover:bg-sb-green-hover 
+           hover:scale-105 hover:shadow-sb-hover active:scale-100
+           focus:outline-none focus:ring-4 focus:ring-sb-green/20;
+  }
+  
+  /* Boutons secondaires */
+  .btn-secondary {
+    @apply bg-sb-orange text-white px-6 py-3 rounded-lg font-semibold 
+           transition-all duration-300 transform hover:bg-sb-orange-hover 
+           hover:scale-105 hover:shadow-orange active:scale-100
+           focus:outline-none focus:ring-4 focus:ring-sb-orange/20;
+  }
+  
+  /* Boutons outline */
+  .btn-outline {
+    @apply border-2 border-sb-green text-sb-green px-6 py-3 rounded-lg 
+           font-semibold transition-all duration-300 hover:bg-sb-green 
+           hover:text-white hover:shadow-sb focus:outline-none 
+           focus:ring-4 focus:ring-sb-green/20;
+  }
+  
+  /* Cards */
+  .card {
+    @apply bg-white rounded-xl p-6 shadow-sb transition-all duration-300
+           hover:shadow-sb-hover hover:-translate-y-1;
+  }
+  
+  /* Inputs */
+  .input {
+    @apply w-full px-4 py-3 bg-sb-gray-light/30 border border-sb-gray-border 
+           rounded-lg transition-all duration-300 focus:border-sb-green 
+           focus:bg-white focus:outline-none focus:ring-4 focus:ring-sb-green/10;
+  }
+  
+  /* Labels */
+  .label {
+    @apply block text-sm font-semibold text-sb-green mb-2;
+  }
+  
+  /* Container responsive */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Section spacing */
+  .section {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-sb-green to-sb-green-hover bg-clip-text text-transparent;
+  }
+  
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .badge-green {
+    @apply bg-sb-green/10 text-sb-green;
+  }
+  
+  .badge-orange {
+    @apply bg-sb-orange/10 text-sb-orange;
+  }
+}
+
+/* Utilities personnalisées */
+@layer utilities {
+  /* Animations */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Glass effect */
+  .glass {
+    @apply backdrop-blur-md bg-white/80 border border-white/20;
+  }
+  
+  /* Gradients */
+  .gradient-sb {
+    background: linear-gradient(135deg, var(--sb-green) 0%, var(--sb-green-hover) 100%);
+  }
+  
+  .gradient-orange {
+    background: linear-gradient(135deg, var(--sb-orange) 0%, var(--sb-orange-light) 100%);
+  }
+  
+  /* Text selection */
+  ::selection {
+    @apply bg-sb-green text-white;
+  }
+  
+  ::-moz-selection {
+    @apply bg-sb-green text-white;
+  }
+}
+
+/* Animations Keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-sb-gray-light/30;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-sb-green rounded-full;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-sb-green-hover;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
